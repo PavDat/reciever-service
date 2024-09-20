@@ -9,7 +9,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 script {
-                    sh 'npm install'  // Or 'yarn install' if you use Yarn
+                    sh 'npm install'  
                 }
             }
         }
@@ -17,7 +17,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh 'npm run build'  // Or 'yarn build'
+                    sh 'npm run build'  
                 }
             }
         }
@@ -25,12 +25,12 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
-                    sh 'npm run test'  // Or 'yarn test'
+                    sh 'npm run test'
                 }
             }
         }
 
-        stage('Cat Hello') {
+        stage('Print Hello') {
             steps {
                 script {
                     sh 'echo Hello'
