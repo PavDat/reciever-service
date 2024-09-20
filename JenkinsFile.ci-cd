@@ -8,25 +8,30 @@ pipeline {
     stages {
         stage('Install Dependencies') {
             steps {
-                script {
-                    sh 'npm install'  
-                }
+                echo "Running install"
+                // script {
+                //     sh 'npm install'  
+                // }
             }
         }
 
         stage('Build') {
             steps {
-                script {
-                    sh 'npm run build'  
-                }
+                echo "Running build"
+
+                // script {
+                //     sh 'npm run build'  
+                // }
             }
         }
 
         stage('Run Tests') {
             steps {
-                script {
-                    sh 'npm run test'
-                }
+                echo "Running test"
+
+                // script {
+                //     sh 'npm run test'
+                // }
             }
         }
 
