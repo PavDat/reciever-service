@@ -1,0 +1,47 @@
+pipeline {
+    agent any
+
+    environment {
+        NODE_ENV = 'development'
+    }
+
+    stages {
+        stage('Install Dependencies') {
+            steps {
+                script {
+                    sh 'npm install'  // Or 'yarn install' if you use Yarn
+                }
+            }
+        }
+
+        stage('Build') {
+            steps {
+                script {
+                    sh 'npm run build'  // Or 'yarn build'
+                }
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                script {
+                    sh 'npm run test'  // Or 'yarn test'
+                }
+            }
+        }
+
+        stage('Cat Hello') {
+            steps {
+                script {
+                    sh 'echo Hello'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline execution finished!'
+        }
+    }
+}
